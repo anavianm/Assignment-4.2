@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*,#90C0A8,#A8D8D8,#C07878,#271621,#F0C0C0,#90C0A8,#A8D8D8*/
+
+body{
+	background: #F0C0C0;
+	text-align: center;
+}
+
+h1{
+	color: #271621;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	font-size: 100px;
+	text-shadow: -4px 3px 0 #90C0A8, -14px 7px 0 #C07878;
+	
+}
+
+h3{
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	font-size: 30px;
+	color: #90C0A8;
+	text-shadow: -3px 2px 0 #271621;
+}
+p{
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	font-size: 20px;
+	color: #271621;	
+}
+
+#result5{
+	color: #B63D3F	
+}
+
+input[type=text], select, textarea{
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+button {
+  text-decoration: none!important;
+  display: inline-block;
+  border-radius: 2px;
+  background-color: #90C0A8;
+  border: none;
+  color: #173885!imporant;
+  text-align: center;
+  font-size: 14px;
+  padding: 20px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer!important;
+  margin: 5px;
+}	

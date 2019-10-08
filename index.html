@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Joe's Resturant</title>
+<link href="main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<h1>Joe's Hotdogs</h1>
+	
+	<form id="form" >
+		<h3>Hotdogs: </h3>
+		<input type="text" placeholder="Number of Hotdogs" id="hotdog">
+		<br>
+		<h3>Fries: </h3>
+		<input type="text" placeholder="Number of Fries" id="fries">
+		<br>
+		<h3>Drinks</h3>
+		<input type="text" placeholder="Number of drinks" id="drinks">
+		<br>
+		<br>
+		<button type="button" onClick="processForm()" >Place Order</button>
+	</form>
+	
+	<p id="result"></p>
+	<p id="result2"></p>
+	<p id="result3"></p>
+	<p id="result4"></p>
+	<p id="result5"></p>
+	<script language="javascript" type="text/javascript">
+//		var prices = { "hotdogs" : 3.75, "fries" : 2.00, "drinks" : 1.00};
+//		var menu = {"hotdogs", "fries", "drinks"};
+		var index = 0;
+		var menuIndex = 0;
+		var input = new Array();
+		var total, subTotal, taxTotal;
+		var tax = 1.0625;
+		var taxCalc = .0625;
+		var discout = .9;
+		
+		
+		function processForm() {
+			var order = { "hotdogs" : 0, "fries" : 0, "drinks" : 0};
+			var prices = { "hotdogs" : 3.75, "fries" : 2.00, "drinks" : 1.00};
+			order["hotdogs"] = document.getElementById("hotdog").value;
+			order["fries"] = document.getElementById("fries").value;
+			order["drinks"] = document.getElementById("drinks").value;
+			
+//			document.getElementById("result").innerHTML = (document.getElementById("hotdog").value);
+//			
+//			for(key in order){
+//				order[key] = input[index];
+//				index++;
+//			}
+			
+			
+//			document.getElementById("result").innerHTML = (order["hotdogs"]);
+//			document.getElementById("result2").innerHTML = (order["fries"]);
+//			document.getElementById("result3").innerHTML = (order["drinks"]);
+//			document.getElementById("result").innerHTML = (prices["hotdogs"]);
+//			document.getElementById("result2").innerHTML = (prices["fries"]);
+//			document.getElementById("result3").innerHTML = (prices["drinks"]);
+			
+			var temp1 = parseFloat(order["hotdogs"] * prices["hotdogs"]);
+			var temp2 = parseFloat(order["fries"] * prices["fries"]);
+			var temp3 = parseFloat(order["drinks"] * prices["drinks"]);
+			
+			subTotal = temp1+temp2+temp3;
+//			document.getElementById("result4").innerHTML = (order["hotdogs"] * prices["hotdogs"]);
+			
+			var displaySub = subTotal.toFixed(2);
+			document.getElementById("result").innerHTML = ("Subtotal before tax is: $" + displaySub);
+			
+			if(subTotal > 20){
+				subTotal = subTotal * discout;
+				var discSub = subTotal.toFixed(2);
+				document.getElementById("result3").innerHTML = ("10% Discount Applied! New Subtotal is: $" + discSub);
+			}else{
+				document.getElementById("result3").innerHTML = ("No Discount applied");
+			}
+			
+			taxTotal = subTotal * taxCalc;
+			taxTotal = taxTotal.toFixed(2);
+			document.getElementById("result4").innerHTML = ("Tax is: $" + taxTotal);
+		
+			total = subTotal * tax;
+			total = total.toFixed(2);
+			document.getElementById("result5").innerHTML = ("Total after Tax is: $" + total);
+			
+			
+		}
+			
+//		for(var i in order){
+//     		document.write(i + "=" + order[i] + '<br>');
+//		}
+		
+	</script>
+</body>
+</html>
